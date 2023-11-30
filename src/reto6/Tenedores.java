@@ -2,12 +2,12 @@ package reto6;
 
 public class Tenedores {
 	
-	private static boolean [][] posee;
-	private static boolean [][] tiene;
+	public static int [] posee;
+	public static int [] tiene;
 	
 	public static void configurar(int nFilosofos) {
-		posee=new boolean[nFilosofos][nFilosofos];
-		tiene=new boolean[nFilosofos][nFilosofos];
+		posee=new int[nFilosofos];
+		tiene=new int[nFilosofos];
 
 		//inicializacion asimetrica
 		//el primero tiene dos tenederes.
@@ -31,10 +31,14 @@ public class Tenedores {
 	 * @return
 	 */
 	synchronized public static boolean holds(int q, int r) {
-		return tiene[q][r];
+		return tiene[getIdTenedor(q,r)]==r;
 	}
+
+
+
+
 	synchronized public static boolean owns(int q, int r) {
-		return posee[q][r];
+		return posee[getIdTenedor(q,r)]==q;
 	}
 	
 	/**
@@ -43,8 +47,7 @@ public class Tenedores {
 	 * @param r destino
 	 */
 	synchronized public static void move(int q, int r) {
-		tiene[q][r]=false;
-		tiene[r][q]=true;
+ 		tiene[getIdTenedor(q,r)]=q;
 	}
 	
 	/**
@@ -53,25 +56,15 @@ public class Tenedores {
 	 * @param r destino
 	 */
 	synchronized public static void give(int q, int r) {
-		posee[q][r]=false;
-		posee[r][q]=true;
+		posee[getIdTenedor(q,r)]=r;
 	}
 	
-	public static void imprimir() {
-		System.out.println("POSEE");
-		for (boolean[]fila:posee) {
-			for (boolean po:fila){
-				System.out.print(po+ " ");
-			}
-			System.out.println();
-		}
-		
-		System.out.println("TIENE");
-		for (boolean[]fila:tiene) {
-			for (boolean po:fila){
-				System.out.print(po+ " ");
-			}
-			System.out.println();
-		}
+	private static int getIdTenedor(int q, int r) {
+		int menor=(q<r)?q:r;
+		int mayor=(q>r)?q:r;
+		int idTenedor=menor;
+		if (menor==0&&mayor==Config.N_FILOSOFOS-1)
+			idTenedor=mayor;
+		return idTenedor;
 	}
 }

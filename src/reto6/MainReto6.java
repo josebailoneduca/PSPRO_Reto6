@@ -20,9 +20,8 @@ public class MainReto6 {
 		
 		//configurar asignación asimetrica de tenedores
 		Tenedores.configurar(Config.N_FILOSOFOS);
-		Tenedores.imprimir();
-		//iniciar filosofos
 		
+		//iniciar filosofos
 		for(int i=0;i<Config.N_FILOSOFOS;i++) {
 			filosofos[i].start();
 		}
