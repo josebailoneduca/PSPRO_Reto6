@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 
 /**
- * Imprime estadisticas en pantalla sobre la actividad de los filosofos y la pertenencia de los tenedores
+ * Imprime estadisticas en pantalla sobre la actividad de los filosofos 
  */
 public class Estadistica {
 	
@@ -23,10 +23,6 @@ public class Estadistica {
 	 */
 	private static int[] vecesComido;
 	
-	/**
-	 * array que registra que filosofo es dueño de cada tenedor
-	 */
-	private static int[] duenoTenedor;
 	
 	/**
 	 * estado actual de los filosofos
@@ -46,8 +42,6 @@ public class Estadistica {
 		vecesHambriento=new int[Config.N_FILOSOFOS];
 		totalHambriento=new long[Config.N_FILOSOFOS];
 		vecesComido=new int[Config.N_FILOSOFOS];
-		duenoTenedor=new int[Config.N_FILOSOFOS];
-		duenoTenedor=new int[Config.N_FILOSOFOS];
 		estadoFilosofo=new int[Config.N_FILOSOFOS];
 	}
 
@@ -63,7 +57,7 @@ public class Estadistica {
 	}
 	
 	/**
-	 * Defive un filosofo como comiendo
+	 * Define un filosofo como comiendo
 	 * @param id Id del filosofo
 	 */
 	public static void comiendo(int id) {
@@ -82,16 +76,7 @@ public class Estadistica {
 		imprimirEstadistica();
 	}
 	
-	/**
-	 * Define un filosofo como pensando
-	 * @param idfilosofo Id del filosofo
-	 * @param idtenedor Id del tenedor
-	 */
-	public static void cogerTenedor(int idfilosofo, int idtenedor) {
-		duenoTenedor[idtenedor]=idfilosofo;
-		imprimirEstadistica();
-	}
-
+ 
 	/**
 	 * Define un filosofo como hambriento
 	 * @param id Id del filosofo
@@ -108,23 +93,9 @@ public class Estadistica {
 	 */
 	synchronized private static void imprimirEstadistica() {
 		System.out.println("\n\n\n\n\n\n\n######################################################################");
-		for (int i = 0; i < estadoFilosofo.length; i++) {
-			String tenedor="(tenedor: "+i+" )\n\n";
-			if (duenoTenedor[i]==i)
-				tenedor="\n\n(tenedor: "+i+" )";
-			if (duenoTenedor[i]==-1)
-				tenedor="\n(tenedor: "+i+" )\n";
-			System.out.println(tenedor);
+		for (int i = 0; i < estadoFilosofo.length; i++) 
  			System.out.println("Filosofo "+i+" Media hambriento: "+((vecesHambriento[i]==0)?0:(totalHambriento[i]/vecesHambriento[i]))+"ms -- Ha comido:"+vecesComido[i]+" --- Estado:"+etiquetas[estadoFilosofo[i]]);
-		}
 		
-		String tenedor="(tenedor: 0 )\n\n";
-		if (duenoTenedor[0]==0)
-			tenedor="\n\n(tenedor: 0 )";
-		if (duenoTenedor[0]==-1)
-			tenedor="\n(tenedor: 0 )\n";
-		System.out.println(tenedor);
 	}
-	
 	
 }

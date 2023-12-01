@@ -1,9 +1,31 @@
 package reto6;
 
+/**
+ * Configuración del Reto 6.
+ */
 public class Config {
-	public static int N_FILOSOFOS=5;
-	public static long MIN_COMER=100;
-	public static long MAX_COMER=200;
-	public static long MIN_PENSAR=100;
-	public static long MAX_PENSAR=200;
+	/**
+	 * Numero de filosofos que intervienen
+	 */
+	public static int N_FILOSOFOS=7;
+	
+	/**
+	 * Minima duracion comiendo
+	 */
+	public static long MIN_COMER=500;
+	
+	/**
+	 * Maxima duracion comiendo
+	 */
+	public static long MAX_COMER=1000;
+	
+	/**
+	 * Minima duracion pensando
+	 */
+	public static long MIN_PENSAR=500;
+	
+	/**
+	 * Maxima duracion pensando
+	 */
+	public static long MAX_PENSAR=1000;
 }

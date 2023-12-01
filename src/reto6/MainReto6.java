@@ -1,5 +1,19 @@
 package reto6;
 
+
+/**
+ * Punto de entrada del Reto 6.
+ * 
+ * Implementación de la solucion propuesta en el paper de Wim H. Hesselink del 31st August 2001 
+ * para el problema de la cena de los filosofos.
+ * 
+ * En esta clase se configura el estado inicial del sistema y se pone a funcionar.
+ * 
+ * Configura la clase de estadisticas, genera los filosofos y arrays compartidos, 
+ * lanza la configuracion del estado asimetrico de pertenencia de los tenedores y 
+ * arranca la hebra de cada filosofo.
+
+ */
 public class MainReto6 {
 	
 	
