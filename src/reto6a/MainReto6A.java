@@ -1,4 +1,4 @@
-package reto6;
+package reto6a;
 
 
 /**
@@ -14,7 +14,7 @@ package reto6;
  * arranca la hebra de cada filosofo.
 
  */
-public class MainReto6 {
+public class MainReto6A {
 	
 	
 	

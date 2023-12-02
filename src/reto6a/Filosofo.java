@@ -1,4 +1,4 @@
-package reto6;
+package reto6a;
 
 import java.util.Random;
 
@@ -10,7 +10,7 @@ import java.util.Random;
  * En su carrera ejecuta el proceso del problema:
  * <ul>
  * <li>Pensar</li>
- * <li>Estar habriento e intentar coger los tenedores</ul>
+ * <li>Estar habriento e intentar coger los tenedores</li>
  * <li>Comer</li>
  * <li>Dar los tenedores a los vecinos</li>
  * </ul>

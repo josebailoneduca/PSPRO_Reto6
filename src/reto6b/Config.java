@@ -1,18 +1,18 @@
 package reto6b;
 
 /**
- * Configuración del Reto 6.
+ * Configuración del Reto 6 version B.
  */
 public class Config {
 	/**
 	 * Numero de filosofos que intervienen
 	 */
-	public static int N_FILOSOFOS=7;
+	public static int N_FILOSOFOS=5;
 	
 	/**
 	 * Minima duracion comiendo
 	 */
-	public static long MIN_COMER=500;
+	public static long MIN_COMER=100;
 	
 	/**
 	 * Maxima duracion comiendo
@@ -22,7 +22,7 @@ public class Config {
 	/**
 	 * Minima duracion pensando
 	 */
-	public static long MIN_PENSAR=500;
+	public static long MIN_PENSAR=100;
 	
 	/**
 	 * Maxima duracion pensando

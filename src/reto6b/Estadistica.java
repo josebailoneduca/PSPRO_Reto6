@@ -32,7 +32,7 @@ public class Estadistica {
 	/**
 	 * etiquetas de los estados
 	 */
-	private static final String[] etiquetas= {"pensando","hambriento","comiendo"};
+	private static final String[] etiquetas= {"pensando","hambriento","comiendo  ---------------"};
 	
 	
 	/**

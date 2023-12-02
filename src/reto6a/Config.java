@@ -1,13 +1,13 @@
-package reto6;
+package reto6a;
 
 /**
- * Configuración del Reto 6.
+ * Configuración del Reto 6 version A.
  */
 public class Config {
 	/**
 	 * Numero de filosofos que intervienen
 	 */
-	public static int N_FILOSOFOS=7;
+	public static int N_FILOSOFOS=5;
 	
 	/**
 	 * Minima duracion comiendo
